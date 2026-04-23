@@ -64,7 +64,7 @@ export default function Projects() {
       fullDescription: "Complete e-commerce solution with product management, shopping cart, and payment integration.",
       image: "https://images.unsplash.com/photo-1611080626919-7cf8b9dbab5b?w=600&h=400&fit=crop",
       mockupType: "desktop",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+      technologies: ["wordpress", "MongoDB", "Stripe"],
       metrics: {
         conversion: "45%",
         loadTime: "1.2s",

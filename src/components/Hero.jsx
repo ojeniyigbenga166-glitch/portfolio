@@ -211,11 +211,11 @@ export default function Hero() {
           <div className="flex flex-col justify-center">
             {/* Main Headline */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-8 tracking-tight pt-12">
-              <span className="text-white">I design and build</span>
+              <span className="text-white">Open For Project</span>
               <br />
-              <span className="text-orange-400">high-converting</span>
+              <span className="text-orange-400">Olugebnga</span>
               <br />
-              <span className="text-white">websites</span>
+              <span className="text-white">Ojeniyi</span>
             </h1>
 
             {/* Subtext */}
