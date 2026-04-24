@@ -67,7 +67,7 @@ export default function About() {
 
             {/* Description */}
             <p className="text-base sm:text-lg text-gray-400 leading-relaxed mb-6 sm:mb-8 max-w-lg mx-auto lg:mx-0">
-              With over 8 years of experience, I've moved past simply "coding websites." I focus on building technical assets that solve real business bottlenecks. Every project is an opportunity to create scalable, beautiful solutions that drive measurable growth.
+              With over 5 years of experience, I've moved past simply "coding websites." I focus on building technical assets that solve real business bottlenecks. Every project is an opportunity to create scalable, beautiful solutions that drive measurable growth.
             </p>
 
             {/* Additional Description */}

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import logoImage from '../assets/images/logo.png';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -195,8 +196,8 @@ export default function Navbar() {
         {/* Top bar */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
           {/* Logo */}
-          <div className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent flex-shrink-0">
-            ARLTECH
+          <div className="flex-shrink-0 flex items-center">
+            <img src={logoImage} alt="ARLTECH Logo" className="h-16 sm:h-20 md:h-24 lg:h-28 w-auto object-contain" />
           </div>
 
           {/* Desktop Navigation */}

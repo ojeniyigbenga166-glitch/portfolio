@@ -49,8 +49,8 @@ export default function CV() {
       skills: ["Git", "Docker", "Figma", "VS Code", "AWS"]
     },
     {
-      category: "Soft Skills",
-      skills: ["Problem Solving", "Communication", "Leadership", "Collaboration", "Project Management"]
+      category: "CMS",
+      skills: ["WordPress", "Shopify", "Wix", "Webflow", "Squarespace"]
     }
   ];
 
@@ -76,7 +76,7 @@ export default function CV() {
   return (
     <section id="cv" className="py-24 px-6 bg-dark-secondary/30">
       <div className="max-w-7xl mx-auto">
-        
+
         {/* EXPERIENCE SECTION */}
         <div className="mb-24">
           {/* Section Header */}

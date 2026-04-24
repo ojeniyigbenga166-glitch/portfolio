@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 export default function Footer() {
-  
+
   return (
     <footer className="bg-dark-secondary border-t border-dark-tertiary py-12 px-6">
       <div className="max-w-7xl mx-auto">
@@ -41,7 +41,7 @@ export default function Footer() {
                 📱 Contact Me
                 <span className="text-xs group-hover:rotate-180 transition-transform duration-300">▼</span>
               </button>
-              
+
               {/* Dropdown Menu */}
               <div className="absolute right-0 mt-2 w-full bg-dark-secondary border border-dark-tertiary rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                 <a
@@ -87,6 +87,9 @@ export default function Footer() {
               </a>
               <a href="#" className="text-gray-500 hover:text-orange-400 text-sm transition-all duration-300 hover:translate-y-1">
                 Terms
+              </a>
+              <a href="#" className="text-gray-500 hover:text-orange-400 text-sm transition-all duration-300 hover:translate-y-1">
+                Disclaimer
               </a>
             </div>
           </div>

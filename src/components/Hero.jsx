@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import heroImage from '../assets/images/hero-profile.jpg';
 
 export default function Hero() {
   const [showContactModal, setShowContactModal] = useState(false);
@@ -190,7 +191,7 @@ export default function Hero() {
       {/* ── HERO SECTION ── */}
       <section
         id="home"
-        className="relative w-full pt-16 pb-12 px-4 sm:px-6 overflow-hidden"
+        className="relative w-full pt-36 md:pt-48 lg:pt-56 pb-12 px-4 sm:px-6 overflow-hidden"
       >
         {/* Background Gradient */}
         <div className="absolute inset-0 -z-20 bg-gradient-to-br from-dark via-dark to-orange-950"></div>
@@ -209,16 +210,16 @@ export default function Hero() {
             {/* LEFT SIDE – TEXT CONTENT */}
             <div className="flex flex-col justify-center text-center lg:text-left">
               {/* Main Headline */}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6 tracking-tight break-words">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-4 tracking-tight break-words">
                 <span className="text-white">Open For Project</span>
                 <br />
-                <span className="text-orange-400">Olugebnga</span>
+                <span className="text-orange-400">Olugbenga</span>
                 <br />
-                <span className="text-white">Ojeniyi</span>n
+                <span className="text-white">Ojeniyi</span>
               </h1>
 
               {/* Subtext */}
-              <p className="text-base sm:text-lg md:text-xl text-gray-400 leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0">
+              <p className="text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed mb-6 max-w-lg mx-auto lg:mx-0">
                 Transforming technical precision into business growth. I bridge the gap between beautiful design and performant code to create digital experiences that convert.
               </p>
 
@@ -258,15 +259,15 @@ export default function Hero() {
             </div>
 
             {/* RIGHT SIDE – IMAGE (desktop only) */}
-            <div className="hidden lg:flex justify-center items-center relative">
+            <div className="hidden lg:flex justify-center items-center relative lg:-mt-12">
               <div className="relative w-full max-w-md aspect-square">
                 {/* Glow */}
                 <div className="absolute -inset-1 bg-gradient-to-br from-orange-500/30 to-orange-600/20 rounded-3xl blur-xl opacity-75"></div>
 
                 <div className="relative w-full h-full rounded-3xl overflow-hidden transition-transform duration-300 hover:scale-105">
                   <img
-                    src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=600&fit=crop"
-                    alt="Developer workspace"
+                    src={heroImage}
+                    alt="Olugbenga Ojeniyi"
                     className="w-full h-full object-cover rounded-3xl filter brightness-110 contrast-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-br from-black/10 to-transparent rounded-3xl"></div>
