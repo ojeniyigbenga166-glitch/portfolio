@@ -190,7 +190,7 @@ export default function Hero() {
       {/* ── HERO SECTION ── */}
       <section
         id="home"
-        className="relative min-h-screen flex items-center justify-center pt-16 pb-12 px-4 sm:px-6 overflow-hidden"
+        className="relative w-full pt-16 pb-12 px-4 sm:px-6 overflow-hidden"
       >
         {/* Background Gradient */}
         <div className="absolute inset-0 -z-20 bg-gradient-to-br from-dark via-dark to-orange-950"></div>
@@ -209,7 +209,7 @@ export default function Hero() {
             {/* LEFT SIDE – TEXT CONTENT */}
             <div className="flex flex-col justify-center text-center lg:text-left">
               {/* Main Headline */}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6 tracking-tight pt-8 sm:pt-12">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6 tracking-tight pt-4 sm:pt-8">
                 <span className="text-white">Open For Project</span>
                 <br />
                 <span className="text-orange-400">Olugebnga</span>
@@ -241,7 +241,7 @@ export default function Hero() {
               </div>
 
               {/* Stats Row */}
-              <div className="flex justify-center lg:justify-start gap-6 sm:gap-10 mt-12 pt-8 border-t border-gray-800">
+              <div className="flex justify-center lg:justify-start gap-6 sm:gap-10 mt-8 pt-6 border-t border-gray-800">
                 <div className="transition-all duration-300 hover:scale-105 text-center lg:text-left">
                   <div className="text-2xl sm:text-3xl md:text-4xl font-black text-white">50+</div>
                   <div className="text-xs sm:text-sm text-gray-500 mt-1">Projects Delivered</div>

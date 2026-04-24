@@ -74,7 +74,7 @@ export default function Expertise() {
           </div>
 
           {/* RIGHT SIDE - SCROLLING CARDS (Only 2 visible at a time) */}
-          <div className="space-y-6 lg:h-[700px] lg:overflow-y-scroll lg:pr-4 scrollbar-thin">
+          <div className="space-y-6 h-[450px] sm:h-[500px] lg:h-[700px] overflow-y-scroll pr-2 lg:pr-4 scrollbar-thin">
             {features.map((feature) => (
               <div
                 key={feature.number}
