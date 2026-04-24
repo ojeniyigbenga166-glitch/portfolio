@@ -6,6 +6,12 @@
   scroll-behavior: smooth;
 }
 
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
 body {
   @apply bg-dark text-white font-sans;
 }
