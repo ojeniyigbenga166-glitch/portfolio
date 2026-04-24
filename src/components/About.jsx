@@ -11,7 +11,7 @@ export default function About() {
           {/* LEFT SIDE – IMAGE & BADGES */}
           <div className="relative flex justify-center lg:justify-start">
             {/* Main Image Container */}
-            <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md">
+            <div className="relative w-full max-w-[280px] sm:max-w-sm md:max-w-md mx-auto lg:mx-0">
               {/* Glow Background */}
               <div className="absolute -inset-2 bg-gradient-to-br from-orange-500/20 to-orange-600/20 rounded-3xl blur-2xl opacity-50 -z-10"></div>
 
@@ -27,7 +27,7 @@ export default function About() {
               </div>
 
               {/* Tech Badges – positioned safely within image width */}
-              <div className="absolute top-6 -right-2 sm:-right-4 space-y-2 z-10">
+              <div className="absolute top-6 right-0 sm:-right-4 space-y-2 z-10">
                 {technologies.map((tech, index) => (
                   <div
                     key={tech}
@@ -37,7 +37,7 @@ export default function About() {
                       animationDelay: `${index * 0.2}s`
                     }}
                   >
-                    <div className="px-3 py-1.5 sm:px-4 sm:py-2 bg-dark-secondary border border-orange-500/50 rounded-full backdrop-blur-md hover:border-orange-400 hover:scale-110 hover:shadow-lg hover:shadow-orange-500/30 transition-all duration-300">
+                    <div className="px-3 py-1.5 md:px-4 md:py-2 bg-dark-secondary border border-orange-500/50 rounded-full backdrop-blur-md hover:border-orange-400 hover:scale-110 hover:shadow-lg hover:shadow-orange-500/30 transition-all duration-300">
                       <span className="text-xs sm:text-sm font-semibold text-orange-300 whitespace-nowrap">{tech}</span>
                     </div>
                   </div>
@@ -56,7 +56,7 @@ export default function About() {
             </div>
 
             {/* Main Headline */}
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6 sm:mb-8">
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6 sm:mb-8">
               <span className="text-white">I bridge the gap between</span>
               <br />
               <span className="italic text-white">Code</span>
