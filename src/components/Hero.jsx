@@ -258,9 +258,9 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* RIGHT SIDE – IMAGE (desktop only) */}
-            <div className="hidden lg:flex justify-center items-center relative lg:-mt-12">
-              <div className="relative w-full max-w-md aspect-square">
+            {/* RIGHT SIDE – IMAGE */}
+            <div className="flex justify-center items-center relative mt-8 lg:mt-0 lg:-mt-12">
+              <div className="relative w-full max-w-xs sm:max-w-md aspect-square">
                 {/* Glow */}
                 <div className="absolute -inset-1 bg-gradient-to-br from-orange-500/30 to-orange-600/20 rounded-3xl blur-xl opacity-75"></div>
 
