@@ -27,11 +27,11 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="py-24 px-6">
+    <section id="services" className="py-16 sm:py-24 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Services</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Services</h2>
           <div className="w-12 h-1 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full"></div>
         </div>
 

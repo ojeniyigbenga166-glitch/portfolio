@@ -71,7 +71,7 @@ export default function Navbar() {
     <>
       {/* Success Modal */}
       {showSuccessModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
+        <div className="fixed inset-0 z-[60] flex items-center justify-center px-4">
           <div
             className="absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300"
             onClick={closeSuccessModal}
@@ -109,7 +109,7 @@ export default function Navbar() {
 
       {/* Contact Form Modal */}
       {showContactModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center px-4 py-6 overflow-y-auto">
+        <div className="fixed inset-0 z-[60] flex items-center justify-center px-4 py-6 overflow-y-auto">
           <div
             className="absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300"
             onClick={closeContactModal}
@@ -190,142 +190,142 @@ export default function Navbar() {
         </div>
       )}
 
-      <nav className="fixed top-0 w-full z-50 bg-dark/80 backdrop-blur-md border-b border-dark-secondary">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Logo */}
-        <div className="text-2xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-          ARLTECH
-        </div>
-
-      {/* Desktop Navigation */}
-        <div className="hidden md:flex gap-8 items-center">
-          {navLinks.map((link) => (
-            link === 'Contact' ? (
-              <div key={link} className="relative group">
-                <button className="text-gray-300 hover:text-orange-400 transition-all duration-300 text-sm font-medium flex items-center gap-1 group-hover:scale-110">
-                  {link}
-                  <span className="text-xs group-hover:rotate-180 transition-transform duration-300">▼</span>
-                </button>
-                
-                {/* Desktop Dropdown */}
-                <div className="absolute right-0 mt-0 w-40 bg-dark-secondary border border-dark-tertiary rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                  <a
-                    href="https://wa.me/2348147574404?text=Hi%2C%20I%27m%20interested%20in%20discussing%20a%20project%20with%20you"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 px-4 py-3 text-gray-300 hover:text-orange-400 hover:bg-dark-tertiary transition-all duration-300 border-b border-dark-tertiary hover:translate-x-1"
-                  >
-                    <span className="hover:scale-125 transition-transform duration-300">💬</span>
-                    <span>WhatsApp</span>
-                  </a>
-                  <a
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setShowContactModal(true);
-                    }}
-                    className="flex items-center gap-3 px-4 py-3 text-gray-300 hover:text-orange-400 hover:bg-dark-tertiary transition-all duration-300 border-b border-dark-tertiary cursor-pointer hover:translate-x-1"
-                  >
-                    <span className="hover:scale-125 transition-transform duration-300">📧</span>
-                    <span>Gmail</span>
-                  </a>
-                  <a
-                    href="https://fiverr.com/yourprofile"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 px-4 py-3 text-gray-300 hover:text-orange-400 hover:bg-dark-tertiary transition-all duration-300 rounded-b-lg hover:translate-x-1"
-                  >
-                    <span className="hover:scale-125 transition-transform duration-300">⭐</span>
-                    <span>Fiverr</span>
-                  </a>
-                </div>
-              </div>
-            ) : (
-              <a
-                key={link}
-                href={`#${link.toLowerCase()}`}
-                className="text-gray-300 hover:text-orange-400 transition-all duration-300 text-sm font-medium hover:scale-110 inline-block"
-              >
-                {link}
-              </a>
-            )
-          ))}
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden flex flex-col gap-1.5 transition-all duration-300"
-        >
-          <span className={`h-0.5 w-6 bg-white transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-          <span className={`h-0.5 w-6 bg-white transition-all duration-300 ${isOpen ? 'opacity-0' : ''}`}></span>
-          <span className={`h-0.5 w-6 bg-white transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
-        </button>
-
-        {/* Mobile Menu */}
-        {isOpen && (
-          <div className="absolute top-16 left-0 right-0 bg-dark border-b border-dark-secondary md:hidden">
-            <div className="flex flex-col gap-4 p-6">
-              {navLinks.map((link, index) => (
-                link === 'Contact' ? (
-                  <div key={link} className="relative group">
-                    <button className="text-gray-300 hover:text-orange-400 transition-all duration-300 flex items-center gap-2 w-full group-hover:translate-x-1">
-                      {link}
-                      <span className="text-xs group-hover:rotate-180 transition-transform duration-300">▼</span>
-                    </button>
-                    
-                    {/* Mobile Dropdown */}
-                    <div className="mt-2 ml-4 space-y-2 border-l border-dark-tertiary pl-4">
-                      <a
-                        href="https://wa.me/2348147574404?text=Hi%2C%20I%27m%20interested%20in%20discussing%20a%20project%20with%20you"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-3 text-gray-300 hover:text-orange-400 transition-all duration-300 hover:translate-x-1"
-                        onClick={() => setIsOpen(false)}
-                      >
-                        <span className="hover:scale-125 transition-transform duration-300">💬</span>
-                        <span>WhatsApp</span>
-                      </a>
-                      <a
-                        href="#"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          setShowContactModal(true);
-                          setIsOpen(false);
-                        }}
-                        className="flex items-center gap-3 text-gray-300 hover:text-orange-400 transition-all duration-300 cursor-pointer hover:translate-x-1"
-                      >
-                        <span className="hover:scale-125 transition-transform duration-300">📧</span>
-                        <span>Gmail</span>
-                      </a>
-                      <a
-                        href="https://fiverr.com/yourprofile"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-3 text-gray-300 hover:text-orange-400 transition-all duration-300 hover:translate-x-1"
-                        onClick={() => setIsOpen(false)}
-                      >
-                        <span className="hover:scale-125 transition-transform duration-300">⭐</span>
-                        <span>Fiverr</span>
-                      </a>
-                    </div>
-                  </div>
-                ) : (
-                  <a
-                    key={link}
-                    href={`#${link.toLowerCase()}`}
-                    className="text-gray-300 hover:text-orange-400 transition-all duration-300 hover:translate-x-1"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {link}
-                  </a>
-                )
-              ))}
-            </div>
+      {/* ── NAV WRAPPER ── */}
+      <nav className="fixed top-0 left-0 right-0 w-full z-50 bg-dark/80 backdrop-blur-md border-b border-dark-secondary">
+        {/* Top bar */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+          {/* Logo */}
+          <div className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent flex-shrink-0">
+            ARLTECH
           </div>
-        )}
-      </div>
-    </nav>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex gap-8 items-center">
+            {navLinks.map((link) => (
+              link === 'Contact' ? (
+                <div key={link} className="relative group">
+                  <button className="text-gray-300 hover:text-orange-400 transition-all duration-300 text-sm font-medium flex items-center gap-1 group-hover:scale-110">
+                    {link}
+                    <span className="text-xs group-hover:rotate-180 transition-transform duration-300">▼</span>
+                  </button>
+
+                  {/* Desktop Dropdown */}
+                  <div className="absolute right-0 mt-0 w-40 bg-dark-secondary border border-dark-tertiary rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    <a
+                      href="https://wa.me/2348147574404?text=Hi%2C%20I%27m%20interested%20in%20discussing%20a%20project%20with%20you"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 px-4 py-3 text-gray-300 hover:text-orange-400 hover:bg-dark-tertiary transition-all duration-300 border-b border-dark-tertiary hover:translate-x-1"
+                    >
+                      <span className="hover:scale-125 transition-transform duration-300">💬</span>
+                      <span>WhatsApp</span>
+                    </a>
+                    <a
+                      href="#"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setShowContactModal(true);
+                      }}
+                      className="flex items-center gap-3 px-4 py-3 text-gray-300 hover:text-orange-400 hover:bg-dark-tertiary transition-all duration-300 border-b border-dark-tertiary cursor-pointer hover:translate-x-1"
+                    >
+                      <span className="hover:scale-125 transition-transform duration-300">📧</span>
+                      <span>Gmail</span>
+                    </a>
+                    <a
+                      href="https://fiverr.com/yourprofile"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 px-4 py-3 text-gray-300 hover:text-orange-400 hover:bg-dark-tertiary transition-all duration-300 rounded-b-lg hover:translate-x-1"
+                    >
+                      <span className="hover:scale-125 transition-transform duration-300">⭐</span>
+                      <span>Fiverr</span>
+                    </a>
+                  </div>
+                </div>
+              ) : (
+                <a
+                  key={link}
+                  href={`#${link.toLowerCase()}`}
+                  className="text-gray-300 hover:text-orange-400 transition-all duration-300 text-sm font-medium hover:scale-110 inline-block"
+                >
+                  {link}
+                </a>
+              )
+            ))}
+          </div>
+
+          {/* Mobile Hamburger Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden flex flex-col justify-center gap-1.5 p-2 transition-all duration-300 flex-shrink-0"
+            aria-label="Toggle menu"
+          >
+            <span className={`block h-0.5 w-6 bg-white transition-all duration-300 origin-center ${isOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+            <span className={`block h-0.5 w-6 bg-white transition-all duration-300 ${isOpen ? 'opacity-0 scale-x-0' : ''}`}></span>
+            <span className={`block h-0.5 w-6 bg-white transition-all duration-300 origin-center ${isOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+          </button>
+        </div>
+
+        {/* Mobile Menu – lives inside <nav> so it's always full-width */}
+        <div
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          }`}
+        >
+          <div className="border-t border-dark-secondary bg-dark/95 backdrop-blur-md px-4 py-4 flex flex-col gap-4">
+            {navLinks.map((link) => (
+              link === 'Contact' ? (
+                <div key={link} className="flex flex-col gap-2">
+                  <span className="text-gray-300 font-medium text-sm">Contact</span>
+                  <div className="ml-4 flex flex-col gap-2 border-l border-dark-tertiary pl-4">
+                    <a
+                      href="https://wa.me/2348147574404?text=Hi%2C%20I%27m%20interested%20in%20discussing%20a%20project%20with%20you"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 text-gray-300 hover:text-orange-400 transition-all duration-300 text-sm py-1"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <span>💬</span>
+                      <span>WhatsApp</span>
+                    </a>
+                    <a
+                      href="#"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setShowContactModal(true);
+                        setIsOpen(false);
+                      }}
+                      className="flex items-center gap-3 text-gray-300 hover:text-orange-400 transition-all duration-300 cursor-pointer text-sm py-1"
+                    >
+                      <span>📧</span>
+                      <span>Gmail</span>
+                    </a>
+                    <a
+                      href="https://fiverr.com/yourprofile"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 text-gray-300 hover:text-orange-400 transition-all duration-300 text-sm py-1"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <span>⭐</span>
+                      <span>Fiverr</span>
+                    </a>
+                  </div>
+                </div>
+              ) : (
+                <a
+                  key={link}
+                  href={`#${link.toLowerCase()}`}
+                  className="text-gray-300 hover:text-orange-400 transition-all duration-300 text-sm font-medium py-1"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link}
+                </a>
+              )
+            ))}
+          </div>
+        </div>
+      </nav>
     </>
   );
 }

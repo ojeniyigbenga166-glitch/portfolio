@@ -68,7 +68,7 @@ export default function Hero() {
     <>
       {/* Success Modal */}
       {showSuccessModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
+        <div className="fixed inset-0 z-[60] flex items-center justify-center px-4">
           <div
             className="absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300"
             onClick={closeSuccessModal}
@@ -106,7 +106,7 @@ export default function Hero() {
 
       {/* Contact Form Modal */}
       {showContactModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center px-4 py-6 overflow-y-auto">
+        <div className="fixed inset-0 z-[60] flex items-center justify-center px-4 py-6 overflow-y-auto">
           <div
             className="absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300"
             onClick={closeContactModal}
@@ -187,101 +187,99 @@ export default function Hero() {
         </div>
       )}
 
-    <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 px-6 overflow-hidden">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 -z-20 bg-gradient-to-br from-dark via-dark to-orange-950"></div>
-      
-      {/* Extended Glow Effects with Ray of Light */}
-      <div className="absolute inset-0 -z-10">
-        {/* Left glow */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500/15 rounded-full filter blur-3xl"></div>
-        
-        {/* Central Ray of Light - extends across hero */}
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-2 h-full bg-gradient-to-b from-transparent via-orange-500/20 to-transparent filter blur-2xl opacity-60"></div>
-        
-        {/* Right glow */}
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-orange-600/10 rounded-full filter blur-3xl"></div>
-      </div>
+      {/* ── HERO SECTION ── */}
+      <section
+        id="home"
+        className="relative min-h-screen flex items-center justify-center pt-16 pb-12 px-4 sm:px-6 overflow-hidden"
+      >
+        {/* Background Gradient */}
+        <div className="absolute inset-0 -z-20 bg-gradient-to-br from-dark via-dark to-orange-950"></div>
 
-      {/* Main Content Container */}
-      <div className="max-w-7xl mx-auto w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          
-          {/* LEFT SIDE - TEXT CONTENT */}
-          <div className="flex flex-col justify-center">
-            {/* Main Headline */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-8 tracking-tight pt-12">
-              <span className="text-white">Open For Project</span>
-              <br />
-              <span className="text-orange-400">Olugebnga</span>
-              <br />
-              <span className="text-white">Ojeniyi</span>
-            </h1>
-
-            {/* Subtext */}
-            <p className="text-lg md:text-xl text-gray-400 leading-relaxed mb-10 max-w-lg">
-              Transforming technical precision into business growth. I bridge the gap between beautiful design and performant code to create digital experiences that convert.
-            </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button 
-                onClick={() => {
-                  document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-orange-500/40 text-lg"
-              >
-                View My Work
-              </button>
-              <button className="px-8 py-4 border-2 border-gray-600 hover:border-orange-400 text-white font-bold rounded-lg transition-all duration-300 hover:bg-orange-500/5 text-lg" onClick={() => setShowContactModal(true)}>
-                Let's Talk
-              </button>
-            </div>
-
-            {/* Stats Row */}
-            <div className="flex gap-8 md:gap-12 mt-16 pt-12 border-t border-gray-800">
-              <div className="transition-all duration-300 hover:scale-105">
-                <div className="text-3xl md:text-4xl font-black text-white">50+</div>
-                <div className="text-sm text-gray-500 mt-2">Projects Delivered</div>
-              </div>
-              <div className="transition-all duration-300 hover:scale-105">
-                <div className="text-3xl md:text-4xl font-black text-white">30+</div>
-                <div className="text-sm text-gray-500 mt-2">Happy Clients</div>
-              </div>
-              <div className="transition-all duration-300 hover:scale-105">
-                <div className="text-3xl md:text-4xl font-black text-white">5+</div>
-                <div className="text-sm text-gray-500 mt-2">Years Experience</div>
-              </div>
-            </div>
-          </div>
-
-          {/* RIGHT SIDE - IMAGE (No Background) */}
-          <div className="hidden lg:flex justify-center items-center relative">
-            <div className="relative w-full max-w-md aspect-square">
-              
-              {/* Image Container with Extended Glow */}
-              <div className="absolute -inset-1 bg-gradient-to-br from-orange-500/30 to-orange-600/20 rounded-3xl blur-xl opacity-75"></div>
-              
-              {/* Image without background container */}
-              <div className="relative w-full h-full rounded-3xl overflow-hidden transition-transform duration-300 hover:scale-105">
-                <img
-                  src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=600&fit=crop"
-                  alt="Developer workspace"
-                  className="w-full h-full object-cover rounded-3xl filter brightness-110 contrast-105"
-                />
-                {/* Subtle overlay for depth */}
-                <div className="absolute inset-0 bg-gradient-to-br from-black/10 to-transparent rounded-3xl"></div>
-              </div>
-
-              {/* Enhanced extended shadow glow */}
-              <div className="absolute -inset-8 bg-gradient-to-br from-orange-500/20 via-orange-600/10 to-transparent rounded-3xl filter blur-3xl -z-10 opacity-80"></div>
-              <div className="absolute -inset-12 bg-gradient-to-t from-orange-500/15 to-transparent rounded-full filter blur-3xl -z-10 opacity-60"></div>
-            </div>
-          </div>
-
+        {/* Glow Effects */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-1/4 left-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-orange-500/15 rounded-full filter blur-3xl"></div>
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-2 h-full bg-gradient-to-b from-transparent via-orange-500/20 to-transparent filter blur-2xl opacity-60"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-56 sm:w-80 h-56 sm:h-80 bg-orange-600/10 rounded-full filter blur-3xl"></div>
         </div>
-      </div>
-    </section>
+
+        {/* Main Content Container */}
+        <div className="max-w-7xl mx-auto w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+
+            {/* LEFT SIDE – TEXT CONTENT */}
+            <div className="flex flex-col justify-center text-center lg:text-left">
+              {/* Main Headline */}
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6 tracking-tight pt-8 sm:pt-12">
+                <span className="text-white">Open For Project</span>
+                <br />
+                <span className="text-orange-400">Olugebnga</span>
+                <br />
+                <span className="text-white">Ojeniyi</span>n
+              </h1>
+
+              {/* Subtext */}
+              <p className="text-base sm:text-lg md:text-xl text-gray-400 leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0">
+                Transforming technical precision into business growth. I bridge the gap between beautiful design and performant code to create digital experiences that convert.
+              </p>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 pt-2 justify-center lg:justify-start">
+                <button
+                  onClick={() => {
+                    document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="px-7 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-orange-500/40 text-base sm:text-lg"
+                >
+                  View My Work
+                </button>
+                <button
+                  className="px-7 py-4 border-2 border-gray-600 hover:border-orange-400 text-white font-bold rounded-lg transition-all duration-300 hover:bg-orange-500/5 text-base sm:text-lg"
+                  onClick={() => setShowContactModal(true)}
+                >
+                  Let's Talk
+                </button>
+              </div>
+
+              {/* Stats Row */}
+              <div className="flex justify-center lg:justify-start gap-6 sm:gap-10 mt-12 pt-8 border-t border-gray-800">
+                <div className="transition-all duration-300 hover:scale-105 text-center lg:text-left">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-black text-white">50+</div>
+                  <div className="text-xs sm:text-sm text-gray-500 mt-1">Projects Delivered</div>
+                </div>
+                <div className="transition-all duration-300 hover:scale-105 text-center lg:text-left">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-black text-white">30+</div>
+                  <div className="text-xs sm:text-sm text-gray-500 mt-1">Happy Clients</div>
+                </div>
+                <div className="transition-all duration-300 hover:scale-105 text-center lg:text-left">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-black text-white">5+</div>
+                  <div className="text-xs sm:text-sm text-gray-500 mt-1">Years Experience</div>
+                </div>
+              </div>
+            </div>
+
+            {/* RIGHT SIDE – IMAGE (desktop only) */}
+            <div className="hidden lg:flex justify-center items-center relative">
+              <div className="relative w-full max-w-md aspect-square">
+                {/* Glow */}
+                <div className="absolute -inset-1 bg-gradient-to-br from-orange-500/30 to-orange-600/20 rounded-3xl blur-xl opacity-75"></div>
+
+                <div className="relative w-full h-full rounded-3xl overflow-hidden transition-transform duration-300 hover:scale-105">
+                  <img
+                    src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=600&fit=crop"
+                    alt="Developer workspace"
+                    className="w-full h-full object-cover rounded-3xl filter brightness-110 contrast-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-black/10 to-transparent rounded-3xl"></div>
+                </div>
+
+                <div className="absolute -inset-8 bg-gradient-to-br from-orange-500/20 via-orange-600/10 to-transparent rounded-3xl filter blur-3xl -z-10 opacity-80"></div>
+                <div className="absolute -inset-12 bg-gradient-to-t from-orange-500/15 to-transparent rounded-full filter blur-3xl -z-10 opacity-60"></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
     </>
   );
 }

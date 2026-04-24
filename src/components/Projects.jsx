@@ -3,12 +3,12 @@ import { useState } from 'react';
 // Device Mockup Components
 function DesktopMockup({ image }) {
   return (
-    <div className="relative w-full h-64 mx-auto scale-90 hover:scale-100 transition-transform duration-300">
+    <div className="relative w-full h-52 sm:h-64 mx-auto scale-90 hover:scale-100 transition-transform duration-300">
       {/* MacBook Frame */}
       <div className="bg-gray-900 rounded-2xl shadow-2xl border-8 border-gray-800 relative">
         {/* Screen */}
         <div className="bg-black rounded-t-lg overflow-hidden">
-          <img src={image} alt="Desktop Preview" className="w-full h-40 object-cover" />
+          <img src={image} alt="Desktop Preview" className="w-full h-36 sm:h-40 object-cover" />
         </div>
         {/* Notch */}
         <div className="bg-gray-900 h-2 flex justify-center">
@@ -23,11 +23,11 @@ function DesktopMockup({ image }) {
 
 function MobileMockup({ image }) {
   return (
-    <div className="relative w-32 h-64 mx-auto scale-90 hover:scale-100 transition-transform duration-300">
+    <div className="relative w-28 sm:w-32 h-56 sm:h-64 mx-auto scale-90 hover:scale-100 transition-transform duration-300">
       {/* iPhone Frame */}
-      <div className="bg-black rounded-3xl shadow-2xl border-8 border-gray-800 relative overflow-hidden">
+      <div className="bg-black rounded-3xl shadow-2xl border-8 border-gray-800 relative overflow-hidden h-full">
         {/* Notch */}
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 h-7 bg-black rounded-b-3xl z-10"></div>
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-20 h-6 bg-black rounded-b-3xl z-10"></div>
         {/* Screen */}
         <img src={image} alt="Mobile Preview" className="w-full h-full object-cover pt-2" />
       </div>
@@ -37,9 +37,9 @@ function MobileMockup({ image }) {
 
 function TabletMockup({ image }) {
   return (
-    <div className="relative w-52 h-48 mx-auto scale-90 hover:scale-100 transition-transform duration-300">
+    <div className="relative w-44 sm:w-52 h-40 sm:h-48 mx-auto scale-90 hover:scale-100 transition-transform duration-300">
       {/* iPad Frame */}
-      <div className="bg-gray-900 rounded-xl shadow-2xl border-6 border-gray-800 relative">
+      <div className="bg-gray-900 rounded-xl shadow-2xl border-4 border-gray-800 relative overflow-hidden h-full">
         {/* Screen */}
         <img src={image} alt="Tablet Preview" className="w-full h-full object-cover rounded-lg" />
         {/* Home Button */}
@@ -178,14 +178,14 @@ export default function Projects() {
     }
   ];
 
-  const filteredProjects = activeCategory === 'All' 
-    ? projects 
+  const filteredProjects = activeCategory === 'All'
+    ? projects
     : projects.filter(p => p.category === activeCategory);
 
   const displayedProjects = showMore ? filteredProjects : filteredProjects.slice(0, 2);
 
   const getMockup = (mockupType, image) => {
-    switch(mockupType) {
+    switch (mockupType) {
       case 'mobile':
         return <MobileMockup image={image} />;
       case 'tablet':
@@ -196,26 +196,29 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="py-24 px-6 bg-dark-secondary/30">
+    <section id="projects" className="py-16 sm:py-24 px-4 sm:px-6 bg-dark-secondary/30">
       <div className="max-w-7xl mx-auto">
+
         {/* Section Header */}
-        <div className="mb-12">
-          <div className="inline-block mb-6">
+        <div className="mb-10 sm:mb-12">
+          <div className="inline-block mb-4 sm:mb-6">
             <span className="text-sm font-bold tracking-widest text-orange-400 uppercase">Portfolio</span>
           </div>
-          <h2 className="text-5xl lg:text-6xl font-black mb-4">Featured <span className="text-orange-400">Projects</span></h2>
-          <p className="text-lg text-gray-400 max-w-2xl">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-4">
+            Featured <span className="text-orange-400">Projects</span>
+          </h2>
+          <p className="text-base sm:text-lg text-gray-400 max-w-2xl">
             Explore my latest work showcasing modern design, clean code, and impactful results
           </p>
         </div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap gap-3 mb-12">
+        <div className="flex flex-wrap gap-2 sm:gap-3 mb-10 sm:mb-12">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-6 py-2 rounded-lg font-semibold transition-all duration-300 ${
+              className={`px-4 sm:px-6 py-2 rounded-lg font-semibold text-sm transition-all duration-300 ${
                 activeCategory === category
                   ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg shadow-orange-500/50'
                   : 'bg-dark-tertiary text-gray-300 hover:text-orange-400 hover:border-orange-500/50 border border-dark-tertiary'
@@ -227,20 +230,25 @@ export default function Projects() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {displayedProjects.map((project) => (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+          {displayedProjects.map((project, index) => (
             <div
               key={project.id}
-              className="group bg-dark-secondary border border-dark-tertiary rounded-2xl overflow-hidden hover:border-orange-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/20 flex flex-col"
+              className="group bg-dark-secondary border border-dark-tertiary rounded-2xl overflow-hidden hover:border-orange-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/20 flex flex-col relative"
             >
+              {/* Project Number Badge – top-left corner, tight to the card */}
+              <div className="absolute top-3 left-3 z-10 w-8 h-8 rounded-full bg-orange-500/20 border border-orange-500/50 flex items-center justify-center backdrop-blur-sm">
+                <span className="text-orange-400 text-xs font-black">{String(index + 1).padStart(2, '0')}</span>
+              </div>
+
               {/* Mockup Container */}
-              <div className="bg-dark-tertiary/50 p-6 flex items-center justify-center min-h-64 relative overflow-hidden">
+              <div className="bg-dark-tertiary/50 p-4 sm:p-6 flex items-center justify-center min-h-52 sm:min-h-64 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 {getMockup(project.mockupType, project.image)}
               </div>
 
               {/* Content */}
-              <div className="p-6 flex flex-col flex-grow">
+              <div className="p-4 sm:p-6 flex flex-col flex-grow">
                 {/* Category Badge */}
                 <div className="mb-3">
                   <span className="inline-block px-3 py-1 bg-orange-500/10 text-orange-400 text-xs font-bold rounded-full border border-orange-500/30">
@@ -249,15 +257,15 @@ export default function Projects() {
                 </div>
 
                 {/* Title & Description */}
-                <h3 className="text-2xl font-bold mb-2 group-hover:text-orange-400 transition-colors duration-300">
+                <h3 className="text-xl sm:text-2xl font-bold mb-2 group-hover:text-orange-400 transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="text-gray-400 text-sm mb-6 flex-grow">
+                <p className="text-gray-400 text-sm mb-5 flex-grow">
                   {project.shortDescription}
                 </p>
 
                 {/* Technologies */}
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-2 mb-5">
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
@@ -274,7 +282,7 @@ export default function Projects() {
                     href={project.links.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 text-center"
+                    className="flex-1 px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 text-center text-sm"
                   >
                     🔗 View Live
                   </a>
@@ -286,8 +294,8 @@ export default function Projects() {
 
         {/* Show More CTA */}
         {filteredProjects.length > 2 && (
-          <div className="mt-12 text-center">
-            <button 
+          <div className="mt-10 sm:mt-12 text-center">
+            <button
               onClick={() => setShowMore(!showMore)}
               className="px-8 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-orange-500/30"
             >
@@ -295,6 +303,7 @@ export default function Projects() {
             </button>
           </div>
         )}
+
       </div>
     </section>
   );

@@ -28,9 +28,9 @@ export default function Expertise() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-dark">
+    <section className="py-12 sm:py-24 px-4 sm:px-6 bg-dark">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           
           {/* LEFT SIDE - STICKY */}
           <div className="lg:sticky lg:top-32 h-fit">
@@ -42,7 +42,7 @@ export default function Expertise() {
             </div>
 
             {/* Main Heading */}
-            <h2 className="text-5xl lg:text-6xl font-black leading-tight mb-6">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6">
               <span className="text-white">Specialized</span>
               <br />
               <span className="text-white">Solutions for</span>
@@ -74,7 +74,7 @@ export default function Expertise() {
           </div>
 
           {/* RIGHT SIDE - SCROLLING CARDS (Only 2 visible at a time) */}
-          <div className="space-y-6 h-[700px] overflow-y-scroll pr-4 scrollbar-thin">
+          <div className="space-y-6 lg:h-[700px] lg:overflow-y-scroll lg:pr-4 scrollbar-thin">
             {features.map((feature) => (
               <div
                 key={feature.number}
