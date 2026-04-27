@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import shopifyImage from '../assets/images/shopify.png';
 
 // Device Mockup Components
 function DesktopMockup({ image }) {
@@ -62,16 +63,16 @@ export default function Projects() {
       category: "Web",
       shortDescription: "Modern shopping experience with real-time inventory",
       fullDescription: "Complete e-commerce solution with product management, shopping cart, and payment integration.",
-      image: "https://images.unsplash.com/photo-1611080626919-7cf8b9dbab5b?w=600&h=400&fit=crop",
+      image: shopifyImage,
       mockupType: "desktop",
-      technologies: ["wordpress", "MongoDB", "Stripe"],
+      technologies: ["wordpress", "woo commerce", "Shopify"],
       metrics: {
         conversion: "45%",
         loadTime: "1.2s",
         users: "10K+"
       },
       links: {
-        live: "https://example-ecommerce.com",
+        live: "https://www.perdidohatco.com",
         github: "https://github.com/yourusername/ecommerce",
         caseStudy: "#case-study-1"
       }
