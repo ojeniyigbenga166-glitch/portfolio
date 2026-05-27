@@ -2,7 +2,7 @@ export default function Expertise() {
   const features = [
     {
       number: "01",
-      title: "Bespoke Web Design",
+      title: "Web Design",
       description: "Custom-tailored designs that reflect your brand identity and engage your target audience. Every pixel crafted with precision and purpose."
     },
     {
