@@ -237,16 +237,6 @@ export default function Projects() {
                           <span>🔗</span> View Live Site
                         </a>
                       )}
-                      {project.github_link && (
-                        <a
-                          href={project.github_link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="px-4 py-2.5 bg-dark-tertiary hover:bg-dark-tertiary/80 border border-gray-700 hover:border-gray-500 text-gray-300 hover:text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 text-center text-sm flex items-center justify-center gap-2"
-                        >
-                          <span>💻</span> GitHub
-                        </a>
-                      )}
                     </div>
                   </div>
                 </div>
