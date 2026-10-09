@@ -64,7 +64,7 @@ export default function Contact() {
     setErrorMessage('');
 
     try {
-      const response = await fetch('https://formspree.io/f/xwvabbnp', {
+      const response = await fetch('http://localhost:5678/webhook-test/2472a214-d250-4ff8-a5e7-5952be558958', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
